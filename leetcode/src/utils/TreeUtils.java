@@ -80,15 +80,43 @@ public class TreeUtils {
         Stack<TreeNode> stack = new Stack<>();
         while (curr != null) {
             while (curr != null) {
+                if (ret != null) {
+                    ret.add(curr.val);
+                } else {
+                    System.out.println(curr.val);
+                }
+                stack.push(curr);
+                curr = curr.left;
+            }
+            while (!stack.empty()) {
+                TreeNode temp = stack.pop();
+                if (temp.right != null) {
+                    curr = temp.right;
+                    break;
+                }
+            }
+        }
+        return ret;
+    }
+
+    public static List<Object> inOrder(TreeNode head, boolean needReturn) {
+        List<Object> ret = null;
+        if (needReturn) {
+            ret = new ArrayList<>();
+        }
+        TreeNode curr = head;
+        Stack<TreeNode> stack = new Stack<>();
+        while (curr != null) {
+            while (curr != null) {
                 stack.push(curr);
                 curr = curr.left;
             }
             while (!stack.empty()) {
                 TreeNode temp = stack.pop();
                 if (ret != null) {
-                    ret.add(temp.val);
+                    ret.add(curr.val);
                 } else {
-                    System.out.println(temp.val);
+                    System.out.println(curr.val);
                 }
                 if (temp.right != null) {
                     curr = temp.right;
@@ -99,6 +127,14 @@ public class TreeUtils {
         return ret;
     }
 
-    public static List<Object>
+    public static List<Object> postOrder(TreeNode head, boolean needReturn) {
+        List<Object> ret = null;
+        if (needReturn) {
+            ret = new ArrayList<>();
+        }
+        TreeNode curr = head;
+        Stack<TreeNode> stack = new Stack<>();
+
+    }
 
 }
