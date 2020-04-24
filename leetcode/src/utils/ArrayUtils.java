@@ -12,4 +12,12 @@ public class ArrayUtils {
             System.out.print(arr[i] + (i == arr.length-1?"":","));
         }
     }
+    public static int[] str2Array(String s){
+        String[] strings = s.split(" ");
+        int[] ret = new int[strings.length];
+        for (int i = 0; i < strings.length; i++) {
+            ret[i] = Integer.parseInt(strings[i]);
+        }
+        return ret;
+    }
 }
