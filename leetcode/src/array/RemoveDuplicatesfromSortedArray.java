@@ -1,13 +1,13 @@
 package array;
 
-import utils.ArrayUtils;
+import utils.ArrayUtil;
 
 import java.util.Arrays;
 
 public class RemoveDuplicatesfromSortedArray {
     public static void main(String[] args) {
         int[] arr = {1, 1, 2, 3, 3, 3};
-        ArrayUtils.printArray(removeDuplicates(arr));
+        ArrayUtil.printArray(removeDuplicates(arr));
     }
 
     private static int[] removeDuplicates(int[] arr) {

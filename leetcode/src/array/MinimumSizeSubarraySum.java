@@ -1,6 +1,6 @@
 package array;
 
-import utils.ArrayUtils;
+import utils.ArrayUtil;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -10,8 +10,8 @@ public class MinimumSizeSubarraySum {
         Scanner scan = new Scanner(System.in);
         String nums = scan.nextLine();
         int target = scan.nextInt();
-        int[] arr = ArrayUtils.str2Array(nums);
-        ArrayUtils.printArray(findMinimumSizeSubarraySum(arr, target));
+        int[] arr = ArrayUtil.str2Array(nums);
+        ArrayUtil.printArray(findMinimumSizeSubarraySum(arr, target));
     }
 
     public static int[] findMinimumSizeSubarraySum(int[] arr, int target) {
