@@ -12,4 +12,8 @@ public class ScannerUtil {
     public static int readInt() {
         return scanner.nextInt();
     }
+
+    public static int[] readArray() {
+        return ArrayUtil.str2Array(readLine());
+    }
 }
