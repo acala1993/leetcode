@@ -16,4 +16,8 @@ public class ScannerUtil {
     public static int[] readArray() {
         return ArrayUtil.str2Array(readLine());
     }
+
+    public static String[] readStringArray() {
+        return readLine().split(" ");
+    }
 }
