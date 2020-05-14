@@ -14,6 +14,8 @@ public class IntersectionOfTwoArrays {
     }
 
     public static int[] findIntersectionOfTwoArrays(int[] arr1, int[] arr2) {
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
         int count = 0;
         int[] ret = new int[Math.min(arr1.length, arr2.length)];
         int index1 = 0;
@@ -33,14 +35,20 @@ public class IntersectionOfTwoArrays {
                     index1++;
                 }
                 if (index1 < arr1.length && arr1[index1] == arr2[index2]) {
-                    ret[count++] = arr1[index1];
+                    while (index1 < arr1.length && index2 < arr2.length
+                            && arr1[index1] == arr2[index2]) {
+                        ret[count++] = arr1[index1];
+                        index1++;
+                        index2++;
+                    }
+                }
+            } else {
+                while (index1 < arr1.length && index2 < arr2.length
+                        && arr1[index1] == arr2[index2]) {
+                    ret[count++] = arr1[index1++];
                     index1++;
                     index2++;
                 }
-            } else {
-                ret[count++] = arr1[index1];
-                index1++;
-                index2++;
             }
         }
         return Arrays.copyOf(ret, count);
