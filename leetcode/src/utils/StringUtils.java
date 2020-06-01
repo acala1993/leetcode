@@ -19,16 +19,35 @@ public class StringUtils {
         return origin.replace(originSubStr, destSubStr);
     }
 
-    public static void main(String[] args) {
-        String s = ScannerUtil.readLine();
-        String originSubStr = ScannerUtil.readLine();
-        String destSubStr = ScannerUtil.readLine();
-        String replaceSpecSubStr = replaceSpecSubStr(s, originSubStr, destSubStr);
+    public static String replaceSpecChar(String str, char[] orgs, char[] dests) {
+        if (orgs.length != dests.length) return str;
+        String ret = null;
+        for (int i = 0; i < orgs.length; i++) {
+            ret = str.replace(orgs[i], dests[i]);
+        }
+        return ret;
+    }
+
+    /**
+     * 把文本设置到剪贴板（复制）
+     */
+    public static void setClipboardString(String text) {
         // 获取系统剪贴板
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         // 封装文本内容
-        Transferable trans = new StringSelection(replaceSpecSubStr);
+        Transferable trans = new StringSelection(text);
         // 把文本内容设置到系统剪贴板
         clipboard.setContents(trans, null);
+    }
+
+    public static void main(String[] args) {
+        while (true) {
+            String s = ScannerUtil.readLine();
+            if (s.equals("exit"))
+                break;
+            char[] orgs = {'\"', '\"'};
+            char[] dests = {'\'', '\''};
+            setClipboardString(replaceSpecChar(s, orgs, dests));
+        }
     }
 }

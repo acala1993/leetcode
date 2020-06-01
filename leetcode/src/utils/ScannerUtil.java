@@ -20,4 +20,13 @@ public class ScannerUtil {
     public static String[] readStringArray() {
         return readLine().split(" ");
     }
+
+    public static char[] readCharArray() {
+        String[] strings = readLine().split(" ");
+        char[] chars = new char[strings.length];
+        for (int i = 0; i < strings.length; i++) {
+            chars[i] = strings[i].toCharArray()[0];
+        }
+        return chars;
+    }
 }

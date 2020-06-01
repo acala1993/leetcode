@@ -2,8 +2,8 @@ package utils;
 
 public class ArrayUtil {
     public static void main(String[] args) {
-        int[] arr = ScannerUtil.readArray();
-        int[] result = moveOneStep(arr);
+        int[] arr = {1, 3, 5, 7, 9};
+        int[] result = rotateArrayWithRandomIndex(arr);
         ArrayUtil.printArray(result);
     }
 
@@ -11,18 +11,21 @@ public class ArrayUtil {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(String.valueOf(arr[i]) + (i == arr.length - 1 ? "" : ","));
         }
+        System.out.print("\n");
     }
 
     public static void printArray(Integer[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(String.valueOf(arr[i]) + (i == arr.length - 1 ? "" : ","));
         }
+        System.out.print("\n");
     }
 
     public static void printArray(String[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + (i == arr.length - 1 ? "" : ","));
         }
+        System.out.print("\n");
     }
 
     public static int[] str2Array(String s) {
@@ -43,7 +46,7 @@ public class ArrayUtil {
     }
 
     public static int[] rotateArrayWithRandomIndex(int[] arr) {
-        int startRotateIndex = (int) Math.random() * arr.length;
+        int startRotateIndex = (int) (Math.random() * arr.length);
         return rotateArray(arr, startRotateIndex);
     }
 
