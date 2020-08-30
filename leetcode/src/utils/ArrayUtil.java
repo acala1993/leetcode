@@ -1,5 +1,8 @@
 package utils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ArrayUtil {
     public static void main(String[] args) {
         int[] arr = {1, 3, 5, 7, 9};
@@ -68,5 +71,14 @@ public class ArrayUtil {
             lastElem = temp;
         }
         return arr;
+    }
+
+    public static List<Integer> str2List(String readLine) {
+        String[] strings = readLine.split(" ");
+        List<Integer> list = new ArrayList<>();
+        for (String string : strings) {
+            list.add(Integer.valueOf(string));
+        }
+        return list;
     }
 }

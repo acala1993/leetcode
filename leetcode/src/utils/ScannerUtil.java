@@ -1,5 +1,6 @@
 package utils;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class ScannerUtil {
@@ -15,6 +16,10 @@ public class ScannerUtil {
 
     public static int[] readArray() {
         return ArrayUtil.str2Array(readLine());
+    }
+
+    public static List<Integer> readList() {
+        return ArrayUtil.str2List(readLine());
     }
 
     public static String[] readStringArray() {
