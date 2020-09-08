@@ -1,5 +1,7 @@
 package utils;
 
+import sun.jvm.hotspot.utilities.Interval;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -33,5 +35,16 @@ public class ScannerUtil {
             chars[i] = strings[i].toCharArray()[0];
         }
         return chars;
+    }
+
+    public static Interval[] readIntervals() {
+        int count = readInt();
+        Interval[] result = new Interval[count];
+        for (int i = 0; i < count; i++) {
+            String[] strings = readLine().split(" ");
+            Interval interval = new Interval(Integer.valueOf(strings[0]), Integer.valueOf(strings[1]));
+            result[i] = interval;
+        }
+        return result;
     }
 }
